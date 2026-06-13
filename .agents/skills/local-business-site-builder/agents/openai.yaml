@@ -1,0 +1,8 @@
+interface:
+  display_name: "Local Business Site Builder"
+  short_description: "Build and audit reusable local business demos"
+  brand_color: "#087A72"
+  default_prompt: "Use $local-business-site-builder to create a verified, mobile-ready local business concept demo."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,42 @@
+{
+  "trustPoints": ["Clear treatment explanations", "Comfort-first appointments", "Simple booking by call or WhatsApp"],
+  "doctor": {
+    "name": "Dr. Aanya Mehta",
+    "title": "Lead Dentist",
+    "credentialNote": "Fictional professional profile for this concept demo.",
+    "bio": "BrightSmile is designed around one simple idea: patients should understand their options and feel comfortable asking questions before making a decision."
+  },
+  "reviews": [
+    {
+      "quote": "The appointment process felt simple, and every step was explained clearly.",
+      "author": "Demo patient review"
+    },
+    {
+      "quote": "A calm, welcoming clinic experience for our entire family.",
+      "author": "Demo patient review"
+    },
+    {
+      "quote": "Easy to contact on WhatsApp and helpful with follow-up questions.",
+      "author": "Demo patient review"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I request an appointment?",
+      "answer": "Use the form below, call the clinic, or send a WhatsApp message. This concept demo does not transmit or store form data."
+    },
+    {
+      "question": "Do you accept walk-ins?",
+      "answer": "Appointments are recommended so the clinic can reserve enough time for your concern. Urgent cases can call before visiting."
+    },
+    {
+      "question": "Will treatment start during the first visit?",
+      "answer": "The first visit normally focuses on understanding your concern and discussing suitable next steps. Treatment depends on the assessment and your consent."
+    },
+    {
+      "question": "What payment methods are available?",
+      "answer": "The concept clinic supports UPI, cards and cash. EMI or insurance support should only be listed after confirming the real clinic's policy."
+    }
+  ],
+  "payments": ["UPI", "Cards", "Cash", "Treatment estimates before approval"]
+}

@@ -1,0 +1,212 @@
+---
+import business from "../config/business.json";
+import services from "../config/services.json";
+import content from "../config/content.json";
+import "../styles/global.css";
+
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={business.seoDescription} />
+    <meta name="theme-color" content={business.primaryColor} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{business.seoTitle}</title>
+  </head>
+  <body style={`--brand:${business.primaryColor};--accent:${business.accentColor};`}>
+    <div class="notice">{business.conceptNotice}</div>
+    <div class="topbar">
+      <div class="container">
+        <span>{business.hours[0]}</span>
+        <span>{business.address}</span>
+      </div>
+    </div>
+    <header>
+      <nav class="container" aria-label="Main navigation">
+        <a class="logo" href="#top">{business.shortName}</a>
+        <div class="navlinks">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#faq">FAQs</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="button" href="#appointment">Request appointment</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container">
+          <div class="hero-copy">
+            <div class="eyebrow">Family dental care in Baner, Pune</div>
+            <h1>{business.tagline}</h1>
+            <p>{business.description}</p>
+            <div class="hero-actions">
+              <a class="button" href="#appointment">Request appointment</a>
+              <a class="button secondary" href={business.whatsappLink}>Chat on WhatsApp</a>
+            </div>
+            <ul class="trust-list">
+              {content.trustPoints.map((point) => <li>{point}</li>)}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-title">
+            <div class="eyebrow">Dental services</div>
+            <h2>Care built around clear choices</h2>
+            <p class="muted">Every treatment starts with a conversation, an assessment and a clear explanation of suitable options.</p>
+          </div>
+          <div class="services-grid">
+            {services.map((service) => (
+              <article class="service">
+                <div class="service-number">{service.number}</div>
+                <h3>{service.name}</h3>
+                <p class="muted">{service.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container about-grid">
+          <div class="about-visual" role="img" aria-label="A welcoming dental consultation room"></div>
+          <div>
+            <div class="eyebrow">Meet your dentist</div>
+            <h2>{content.doctor.name}</h2>
+            <h3>{content.doctor.title}</h3>
+            <p>{content.doctor.bio}</p>
+            <p class="profile-note">{content.doctor.credentialNote}</p>
+            <ul class="payment-list">
+              {content.payments.map((payment) => <li>{payment}</li>)}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reviews" id="reviews">
+        <div class="container">
+          <div class="section-title">
+            <div class="eyebrow">Illustrative reviews</div>
+            <h2>Trust is built in the small moments</h2>
+          </div>
+          <div class="reviews-grid">
+            {content.reviews.map((review) => (
+              <article class="review">
+                <p>"{review.quote}"</p>
+                <strong>{review.author}</strong>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-title">
+            <div class="eyebrow">Frequently asked questions</div>
+            <h2>Useful answers before you visit</h2>
+          </div>
+          <div class="faq-list">
+            {content.faqs.map((faq) => (
+              <details>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="appointment">
+        <div class="container contact-grid">
+          <div>
+            <div class="eyebrow">Request an appointment</div>
+            <h2>Tell us how we can help</h2>
+            <p class="muted">This safe demo form validates your entry locally, displays a confirmation and does not transmit or store personal data.</p>
+            <form id="demo-form">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="phone">Mobile number</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" pattern="[0-9+\s-]{10,16}" required />
+              </div>
+              <div class="field">
+                <label for="concern">What would you like help with?</label>
+                <select id="concern" name="concern" required>
+                  <option value="">Choose an option</option>
+                  {services.map((service) => <option value={service.name}>{service.name}</option>)}
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Optional note</label>
+                <textarea id="message" name="message"></textarea>
+              </div>
+              <button class="button" type="submit">Send demo request</button>
+              <div class="form-status" id="form-status" aria-live="polite"></div>
+            </form>
+          </div>
+          <aside class="contact-card" id="contact">
+            <div class="eyebrow">Visit or contact</div>
+            <h2>{business.name}</h2>
+            <p>{business.address}</p>
+            {business.hours.map((line) => <p><strong>{line}</strong></p>)}
+            <p><a href={`tel:${business.phoneLink}`}>{business.phoneDisplay}</a></p>
+            <p><a href={business.whatsappLink}>Message on WhatsApp</a></p>
+            <p><a href={business.mapLink}>Open map</a></p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <h3>{business.name}</h3>
+          <p>{business.conceptNotice}</p>
+        </div>
+        <div>
+          <strong>Explore</strong>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQs</a>
+        </div>
+        <div>
+          <strong>Contact</strong>
+          <a href={`tel:${business.phoneLink}`}>{business.phoneDisplay}</a>
+          <a href={business.whatsappLink}>WhatsApp</a>
+        </div>
+      </div>
+      <div class="container"><small>© {year} Fictional concept demo. No medical advice or services are provided.</small></div>
+    </footer>
+
+    <div class="mobile-actions" aria-label="Quick contact actions">
+      <a class="button secondary" href={`tel:${business.phoneLink}`}>Call clinic</a>
+      <a class="button" href={business.whatsappLink}>WhatsApp</a>
+    </div>
+
+    <script>
+      const form = document.querySelector<HTMLFormElement>("#demo-form");
+      const status = document.querySelector<HTMLElement>("#form-status");
+      form?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        if (status) status.textContent = "Demo confirmed. No information was sent or stored.";
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "CalmCare Dental Studio",
+  "shortName": "CalmCare",
+  "tagline": "Unhurried dental visits, clearly explained",
+  "phoneDisplay": "+91 91234 56789",
+  "phoneLink": "+919123456789",
+  "whatsappLink": "https://wa.me/919123456789",
+  "address": "Concept address, Indore, Madhya Pradesh",
+  "primaryColor": "#315d82",
+  "accentColor": "#dd8a6a",
+  "conceptNotice": "Fictional second variation. Use this file to test template reuse."
+}
