@@ -3,7 +3,8 @@
   "quickActions": [
     { "title": "Locate Clinic", "text": "Find the closest concept branch", "cta": "Visit now", "href": "#contact" },
     { "title": "Find a Dentist", "text": "View fictional doctor profiles", "cta": "Dental experts", "href": "#doctors" },
-    { "title": "Plan a Visit", "text": "Choose date and time", "cta": "Book now", "href": "#appointment" }
+    { "title": "Plan a Visit", "text": "Choose date and time", "cta": "Book now", "href": "#appointment" },
+    { "title": "Ask a Question", "text": "Use WhatsApp for quick help", "cta": "Message us", "href": "https://wa.me/919876543210?text=Hello%20BrightSmile%2C%20I%20have%20a%20question." }
   ],
   "specialities": [
     { "name": "Implantology", "description": "Replacement options explained after assessment." },
@@ -13,35 +14,11 @@
   ],
   "doctors": [
     {
-      "name": "Dr. Aanya Mehta",
-      "role": "Lead Dentist",
-      "speciality": "Family Dentistry",
-      "experience": "12 years concept experience",
-      "location": "Baner, Pune",
-      "note": "Fictional profile"
-    },
-    {
-      "name": "Dr. Rohan Iyer",
-      "role": "Consultant Dentist",
-      "speciality": "Root Canal Care",
-      "experience": "10 years concept experience",
-      "location": "Aundh, Pune",
-      "note": "Fictional profile"
-    },
-    {
       "name": "Dr. Sana Khan",
       "role": "Orthodontic Consultant",
       "speciality": "Aligners and Braces",
       "experience": "9 years concept experience",
       "location": "Kothrud, Pune",
-      "note": "Fictional profile"
-    },
-    {
-      "name": "Dr. Neel Shah",
-      "role": "Pediatric Dentist",
-      "speciality": "Children's Dentistry",
-      "experience": "8 years concept experience",
-      "location": "Viman Nagar, Pune",
       "note": "Fictional profile"
     }
   ],
@@ -51,10 +28,10 @@
     "bodyTwo": "For a real clinic, this section should use verified history, actual dentist credentials, real photos, approved reviews and confirmed payment details."
   },
   "stats": [
-    { "value": "30,000+", "label": "Happy patients style" },
-    { "value": "24", "label": "Concept specialists" },
-    { "value": "8", "label": "Demo locations" },
-    { "value": "4.8/5", "label": "Review positioning" }
+    { "value": "Verified", "label": "claims before publishing" },
+    { "value": "Mobile", "label": "first appointment flow" },
+    { "value": "Local", "label": "search-ready sections" },
+    { "value": "Simple", "label": "copy for patient trust" }
   ],
   "screening": {
     "heading": "Know your oral health before the clinic visit",
@@ -84,7 +61,6 @@
     { "title": "Healthy tongue and gums", "text": "Small oral-health signs worth discussing with a dentist." },
     { "title": "Children's dental care tips", "text": "How to keep regular visits calm and predictable." }
   ],
-  "presence": ["Baner", "Aundh", "Kothrud", "Viman Nagar", "Pimpri"],
   "faqs": [
     {
       "question": "How do I request an appointment?",

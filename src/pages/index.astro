@@ -54,11 +54,6 @@ const year = new Date().getFullYear();
               <a class="button secondary" href={business.whatsappLink}>Chat on WhatsApp</a>
             </div>
           </div>
-          <div class="hero-art" aria-hidden="true">
-            <span class="hex hex-one">Dental</span>
-            <span class="hex hex-two">Care</span>
-            <span class="hex hex-three">Smile</span>
-          </div>
         </div>
       </section>
 
@@ -97,8 +92,8 @@ const year = new Date().getFullYear();
         <div class="container">
           <div class="center-title">
             <div class="eyebrow">Our doctors</div>
-            <h2>Clear profiles build confidence</h2>
-            <p class="muted">Fictional doctor cards show the kind of trust information a real clinic should verify and publish.</p>
+            <h2>Orthodontic doctor profile</h2>
+            <p class="muted">For now, this demo shows one fictional orthodontic doctor profile with clear appointment action.</p>
           </div>
           <div class="doctor-grid">
             {content.doctors.map((doctor, index) => (
@@ -207,23 +202,6 @@ const year = new Date().getFullYear();
                 <h3>{resource.title}</h3>
                 <p>{resource.text}</p>
               </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section class="section presence-section">
-        <div class="container">
-          <div class="center-title">
-            <div class="eyebrow">Our presence</div>
-            <h2>Local pages can scale across areas</h2>
-          </div>
-          <div class="presence-grid">
-            {content.presence.map((city) => (
-              <div class="presence-card">
-                <span></span>
-                <strong>{city}</strong>
-              </div>
             ))}
           </div>
         </div>
