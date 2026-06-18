@@ -165,9 +165,6 @@ const year = new Date().getFullYear();
                 </div>
               ))}
             </div>
-            <ul class="payment-list">
-              {content.payments.map((payment) => <li>{payment}</li>)}
-            </ul>
           </div>
         </div>
       </section>
@@ -179,8 +176,9 @@ const year = new Date().getFullYear();
             <h2>Our patients speak</h2>
           </div>
           <div class="reviews-grid">
-            {content.reviews.map((review) => (
+            {content.reviews.map((review, index) => (
               <article class="review">
+                <span class={`review-avatar review-avatar-${index + 1}`} aria-hidden="true"></span>
                 <p>"{review.quote}"</p>
                 <strong>{review.author}</strong>
                 <span>{review.source}</span>

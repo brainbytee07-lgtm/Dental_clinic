@@ -51,7 +51,7 @@ nav { min-height: 68px; display: flex; align-items: center; gap: 24px; }
 .navlinks { display: flex; align-items: center; gap: 22px; }
 .navlinks a { text-decoration: none; font-weight: 600; font-size: .88rem; color: #274357; }
 
-.hero { min-height: 430px; background: url("/images/dentist-hero.png") right center / auto 60% no-repeat, linear-gradient(90deg, #1769aa 0 70%, #fff6e8 70% 100%); color: var(--white); overflow: hidden; }
+.hero { min-height: 430px; background: url("/images/dentist-hero.png") right center / auto 100% no-repeat, linear-gradient(90deg, #1769aa 0 70%, #fff6e8 70% 100%); color: var(--white); overflow: hidden; }
 .hero-inner { min-height: 430px; display: grid; align-items: center; }
 .hero-copy { padding: 28px 36px; max-width: 660px; background: transparent; }
 .hero-copy .eyebrow { color: #d8edff; }
@@ -99,7 +99,9 @@ nav { min-height: 68px; display: flex; align-items: center; gap: 24px; }
 
 .services-grid, .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 #services, #about, #appointment { background: var(--paper); }
-.service { border: 1px solid var(--line); background: var(--white); padding: 26px; border-radius: var(--radius); min-height: 230px; position: relative; }
+.service { border: 1px solid var(--line); background: var(--white); padding: 26px; border-radius: var(--radius); min-height: 230px; position: relative; text-align: center; }
+.service h3, .service p, .service-number { text-align: center; }
+.service-icon { margin-inline: auto; }
 .service-number { color: var(--accent); font-weight: 900; font-size: .8rem; }
 .heading-icon { flex: 0 0 auto; }
 .tooth-icon { width: 42px; height: 42px; border: 3px solid var(--brand); border-radius: 54% 54% 44% 44%; position: relative; background: #eef7ff; }
@@ -131,15 +133,16 @@ nav { min-height: 68px; display: flex; align-items: center; gap: 24px; }
 .stat-card { background: #f7fbff; color: var(--ink); padding: 16px; border: 1px solid #d9e6ef; border-radius: 5px; }
 .stat-card strong { display: block; font-size: 1.05rem; color: var(--brand); }
 .stat-card span { font-size: .86rem; font-weight: 600; color: var(--muted); }
-.payment-list { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
-.payment-list li { padding: 9px 12px; background: var(--surface); border-radius: 4px; font-weight: 800; font-size: .85rem; }
 
 .reviews { background: var(--surface); color: var(--ink); }
 .reviews .center-title.light { color: var(--ink); }
 .reviews .eyebrow { color: var(--accent-dark); }
 .review { color: var(--ink); background: var(--white); border: 1px solid #f3d3b7; padding: 24px; border-radius: 5px; min-height: 210px; box-shadow: none; position: relative; }
-.review::before { content: ""; display: block; width: 34px; height: 34px; margin-bottom: 14px; border-radius: 50%; background: var(--accent); }
-.review::after { content: ""; position: absolute; left: 37px; top: 31px; width: 10px; height: 10px; border-left: 3px solid var(--white); border-bottom: 3px solid var(--white); transform: rotate(-45deg); }
+.review-avatar { display: block; width: 46px; height: 46px; margin-bottom: 14px; border-radius: 50%; border: 3px solid #fff7ef; background: linear-gradient(135deg, #dbe8f4, #8db3d5); position: relative; overflow: hidden; }
+.review-avatar::before { content: ""; position: absolute; left: 14px; top: 10px; width: 14px; height: 14px; border-radius: 50%; background: rgba(255,255,255,.92); }
+.review-avatar::after { content: ""; position: absolute; left: 10px; bottom: 8px; width: 24px; height: 14px; border-radius: 14px 14px 7px 7px; background: rgba(255,255,255,.92); }
+.review-avatar-2 { background: linear-gradient(135deg, #f0d4a8, #e78d58); }
+.review-avatar-3 { background: linear-gradient(135deg, #d2eadf, #91c1aa); }
 .review p { font-size: 1rem; }
 .review strong, .review span { display: block; }
 .review span { color: var(--muted); font-size: .86rem; margin-top: 4px; }
@@ -182,7 +185,7 @@ footer { background: #0f5f95; color: var(--white); padding: 52px 0 92px; }
 
 @media (max-width: 800px) {
   .container { width: min(100% - 28px, 1120px); }
-  .section { padding: 56px 0; }
+  .section { padding: 34px 0; }
   .topbar .container { justify-content: center; }
   .topbar span:first-child, .navlinks { display: none; }
   nav { min-height: 58px; gap: 12px; }
@@ -190,19 +193,30 @@ footer { background: #0f5f95; color: var(--white); padding: 52px 0 92px; }
   .logo { font-size: 1.35rem; }
   .hero { min-height: auto; background: url("/images/dentist-hero.png") 66% top / auto 200px no-repeat, linear-gradient(180deg, #fff6e8 0 188px, #1769aa 188px 100%); }
   .hero-inner { min-height: auto; padding-top: 188px; }
-  .hero-copy { padding: 22px 18px 30px; box-shadow: none; }
+  .hero-copy { padding: 14px 12px 18px; box-shadow: none; }
   .hero-copy p { font-size: 1rem; }
   .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .hero-actions .button { min-height: 42px; padding-inline: 10px; font-size: .82rem; text-align: center; }
   .quick-grid, .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
   .quick-card { border-right: 0; border-bottom: 1px solid var(--line); }
   .speciality-grid, .doctor-grid, .doctor-card, .resource-grid, .stats-grid, .form-row { grid-template-columns: 1fr; }
-  .doctor-photo { min-height: 260px; }
-  .doctor-body { padding: 24px; }
+  .doctor-photo { min-height: 156px; }
+  .doctor-body { padding: 14px; }
   .about-grid, .contact-grid { gap: 34px; }
-  .about-visual { min-height: 310px; }
-  .screening-banner { min-height: 510px; align-items: end; background-position: 65% top; background-size: auto 300px; }
-  .screening-banner > div { width: 100%; padding: 28px; }
-  .mobile-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: fixed; z-index: 30; left: 8px; right: 8px; bottom: 8px; padding: 8px; background: var(--white); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.16); }
+  .about-visual { min-height: 186px; }
+  .screening-banner { min-height: 306px; align-items: end; background-position: 65% top; background-size: auto 180px; }
+  .screening-banner > div { width: 100%; padding: 16px; }
+  .resource-card { padding: 16px 16px 16px 58px; }
+  .resource-image { left: 16px; top: 18px; width: 28px; height: 28px; }
+  .service { padding: 16px; min-height: 170px; }
+  .review { padding: 16px; min-height: 160px; }
+  .review-avatar { width: 38px; height: 38px; margin-bottom: 10px; }
+  .contact-card { padding: 18px; }
+  .faq-list details { padding: 14px 16px; }
+  .mobile-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: fixed; z-index: 30; left: 8px; right: 8px; bottom: 8px; padding: 6px; background: var(--white); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.16); }
   .mobile-actions .button { min-height: 44px; font-size: .85rem; }
+}
+
+@media (min-width: 801px) {
+  #services .section-title h2 { white-space: nowrap; }
 }
