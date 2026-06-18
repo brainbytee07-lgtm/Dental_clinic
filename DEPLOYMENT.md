@@ -19,6 +19,16 @@ The project is production-build ready, but this environment has no GitHub or Ver
    - Output directory: `dist`
 4. Deploy and open the HTTPS URL on your phone.
 
+## Publish to Netlify
+
+1. Sign in to Netlify and choose **Add new site**.
+2. Import the Git repository.
+3. Confirm:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+   - Node version: `22.12.0`
+4. Deploy and open the HTTPS URL on your phone.
+
 ## Prospect Preview Workflow
 
 1. Create a branch named `demo/<business-slug>`.
