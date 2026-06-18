@@ -245,7 +245,12 @@ const year = new Date().getFullYear();
                 <select id="concern" name="concern" required>
                   <option value="">Choose an option</option>
                   {services.map((service) => <option value={service.name}>{service.name}</option>)}
+                  <option value="Other">Other</option>
                 </select>
+              </div>
+              <div class="field other-concern-field" id="other-concern-field" hidden>
+                <label for="other-concern">Tell us your concern</label>
+                <input id="other-concern" name="otherConcern" placeholder="Example: Jaw pain, braces query, second opinion" />
               </div>
               <div class="form-row">
                 <div class="field">
@@ -324,7 +329,18 @@ const year = new Date().getFullYear();
       const form = document.querySelector<HTMLFormElement>("#demo-form");
       const status = document.querySelector<HTMLElement>("#form-status");
       const date = document.querySelector<HTMLInputElement>("#date");
+      const concern = document.querySelector<HTMLSelectElement>("#concern");
+      const otherConcernField = document.querySelector<HTMLElement>("#other-concern-field");
+      const otherConcern = document.querySelector<HTMLInputElement>("#other-concern");
       if (date) date.min = new Date().toISOString().slice(0, 10);
+      concern?.addEventListener("change", () => {
+        const isOther = concern.value === "Other";
+        if (otherConcernField) otherConcernField.hidden = !isOther;
+        if (otherConcern) {
+          otherConcern.required = isOther;
+          if (!isOther) otherConcern.value = "";
+        }
+      });
       form?.addEventListener("submit", (event) => {
         event.preventDefault();
         if (!form.checkValidity()) {
