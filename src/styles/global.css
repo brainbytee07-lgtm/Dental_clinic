@@ -51,7 +51,7 @@ nav { min-height: 68px; display: flex; align-items: center; gap: 24px; }
 .navlinks { display: flex; align-items: center; gap: 22px; }
 .navlinks a { text-decoration: none; font-weight: 600; font-size: .88rem; color: #274357; }
 
-.hero { min-height: 430px; background: url("/images/dentist-hero.png") right center / auto 100% no-repeat, linear-gradient(90deg, #1769aa 0 62%, #fff6e8 62% 100%); color: var(--white); overflow: hidden; }
+.hero { min-height: 430px; background: url("/images/dentist-hero.png") right center / auto 100% no-repeat, linear-gradient(90deg, #1769aa 0 70%, #fff6e8 70% 100%); color: var(--white); overflow: hidden; }
 .hero-inner { min-height: 430px; display: grid; align-items: center; }
 .hero-copy { padding: 28px 36px; max-width: 660px; background: transparent; }
 .hero-copy .eyebrow { color: #d8edff; }
