@@ -22,37 +22,101 @@ const year = new Date().getFullYear();
     <div class="topbar">
       <div class="container">
         <span>{business.hours[0]}</span>
-        <span>{business.address}</span>
+        <span>{business.phoneDisplay}</span>
       </div>
     </div>
     <header>
       <nav class="container" aria-label="Main navigation">
         <a class="logo" href="#top">{business.shortName}</a>
         <div class="navlinks">
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#faq">FAQs</a>
+          <a href="#specialities">Specialities</a>
+          <a href="#doctors">Doctors</a>
+          <a href="#services">Treatments</a>
+          <a href="#reviews">Testimonials</a>
           <a href="#contact">Contact</a>
         </div>
-        <a class="button" href="#appointment">Request appointment</a>
+        <a class="button accent" href="#appointment">Get appointment</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
-        <div class="container">
+        <div class="container hero-inner">
           <div class="hero-copy">
             <div class="eyebrow">Family dental care in Baner, Pune</div>
             <h1>{business.tagline}</h1>
             <p>{business.description}</p>
-            <div class="hero-actions">
-              <a class="button" href="#appointment">Request appointment</a>
-              <a class="button secondary" href={business.whatsappLink}>Chat on WhatsApp</a>
-            </div>
-            <ul class="trust-list">
+            <ul class="trust-list hero-trust">
               {content.trustPoints.map((point) => <li>{point}</li>)}
             </ul>
+            <div class="hero-actions">
+              <a class="button accent" href="#appointment">Book an appointment</a>
+              <a class="button secondary" href={business.whatsappLink}>Chat on WhatsApp</a>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <span class="hex hex-one">Dental</span>
+            <span class="hex hex-two">Care</span>
+            <span class="hex hex-three">Smile</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-actions" aria-label="Quick actions">
+        <div class="container quick-grid">
+          {content.quickActions.map((action) => (
+            <a class="quick-card" href={action.href}>
+              <span class="quick-dot"></span>
+              <strong>{action.title}</strong>
+              <small>{action.text}</small>
+              <em>{action.cta} -></em>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="section compact" id="specialities">
+        <div class="container">
+          <div class="center-title">
+            <div class="eyebrow">Our specialities</div>
+            <h2>Easy-to-scan treatment categories</h2>
+          </div>
+          <div class="speciality-grid">
+            {content.specialities.map((item) => (
+              <article class="speciality-card">
+                <span>{item.name.slice(0, 2).toUpperCase()}</span>
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section doctors-section" id="doctors">
+        <div class="container">
+          <div class="center-title">
+            <div class="eyebrow">Our doctors</div>
+            <h2>Clear profiles build confidence</h2>
+            <p class="muted">Fictional doctor cards show the kind of trust information a real clinic should verify and publish.</p>
+          </div>
+          <div class="doctor-grid">
+            {content.doctors.map((doctor, index) => (
+              <article class="doctor-card">
+                <div class={`doctor-photo doctor-photo-${index + 1}`}></div>
+                <div class="doctor-body">
+                  <h3>{doctor.name}</h3>
+                  <p class="doctor-role">{doctor.role}</p>
+                  <ul>
+                    <li>{doctor.speciality}</li>
+                    <li>{doctor.experience}</li>
+                    <li>{doctor.location}</li>
+                  </ul>
+                  <small>{doctor.note}</small>
+                  <a class="mini-button" href="#appointment">Book appointment</a>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -60,7 +124,7 @@ const year = new Date().getFullYear();
       <section class="section" id="services">
         <div class="container">
           <div class="section-title">
-            <div class="eyebrow">Dental services</div>
+            <div class="eyebrow">Treatments</div>
             <h2>Care built around clear choices</h2>
             <p class="muted">Every treatment starts with a conversation, an assessment and a clear explanation of suitable options.</p>
           </div>
@@ -76,15 +140,35 @@ const year = new Date().getFullYear();
         </div>
       </section>
 
+      <section class="section banner-section">
+        <div class="container">
+          <div class="screening-banner">
+            <div>
+              <div class="eyebrow">Oral health screening</div>
+              <h2>{content.screening.heading}</h2>
+              <p>{content.screening.text}</p>
+              <a class="button accent" href="#appointment">{content.screening.cta}</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="about">
         <div class="container about-grid">
-          <div class="about-visual" role="img" aria-label="A welcoming dental consultation room"></div>
+          <div class="about-visual" role="img" aria-label="A welcoming dental clinic reception and consultation area"></div>
           <div>
-            <div class="eyebrow">Meet your dentist</div>
-            <h2>{content.doctor.name}</h2>
-            <h3>{content.doctor.title}</h3>
-            <p>{content.doctor.bio}</p>
-            <p class="profile-note">{content.doctor.credentialNote}</p>
+            <div class="eyebrow">About {business.shortName}</div>
+            <h2>{content.about.heading}</h2>
+            <p>{content.about.body}</p>
+            <p>{content.about.bodyTwo}</p>
+            <div class="stats-grid">
+              {content.stats.map((stat) => (
+                <div class="stat-card">
+                  <strong>{stat.value}</strong>
+                  <span>{stat.label}</span>
+                </div>
+              ))}
+            </div>
             <ul class="payment-list">
               {content.payments.map((payment) => <li>{payment}</li>)}
             </ul>
@@ -94,16 +178,52 @@ const year = new Date().getFullYear();
 
       <section class="section reviews" id="reviews">
         <div class="container">
-          <div class="section-title">
-            <div class="eyebrow">Illustrative reviews</div>
-            <h2>Trust is built in the small moments</h2>
+          <div class="center-title light">
+            <div class="eyebrow">Illustrative testimonials</div>
+            <h2>Our patients speak</h2>
           </div>
           <div class="reviews-grid">
             {content.reviews.map((review) => (
               <article class="review">
                 <p>"{review.quote}"</p>
                 <strong>{review.author}</strong>
+                <span>{review.source}</span>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section resources-section">
+        <div class="container">
+          <div class="center-title">
+            <div class="eyebrow">Oral health resources</div>
+            <h2>Useful reading before booking</h2>
+          </div>
+          <div class="resource-grid">
+            {content.resources.map((resource) => (
+              <article class="resource-card">
+                <div class="resource-image"></div>
+                <h3>{resource.title}</h3>
+                <p>{resource.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section presence-section">
+        <div class="container">
+          <div class="center-title">
+            <div class="eyebrow">Our presence</div>
+            <h2>Local pages can scale across areas</h2>
+          </div>
+          <div class="presence-grid">
+            {content.presence.map((city) => (
+              <div class="presence-card">
+                <span></span>
+                <strong>{city}</strong>
+              </div>
             ))}
           </div>
         </div>
@@ -130,7 +250,7 @@ const year = new Date().getFullYear();
         <div class="container contact-grid">
           <div>
             <div class="eyebrow">Request an appointment</div>
-            <h2>Tell us how we can help</h2>
+            <h2>Choose your preferred date and time</h2>
             <p class="muted">This safe demo form validates your entry locally, displays a confirmation and does not transmit or store personal data.</p>
             <form id="demo-form">
               <div class="field">
@@ -148,11 +268,21 @@ const year = new Date().getFullYear();
                   {services.map((service) => <option value={service.name}>{service.name}</option>)}
                 </select>
               </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="date">Preferred date</label>
+                  <input id="date" name="date" type="date" required />
+                </div>
+                <div class="field">
+                  <label for="time">Preferred time</label>
+                  <input id="time" name="time" type="time" min="09:00" max="20:00" required />
+                </div>
+              </div>
               <div class="field">
                 <label for="message">Optional note</label>
                 <textarea id="message" name="message"></textarea>
               </div>
-              <button class="button" type="submit">Send demo request</button>
+              <button class="button accent" type="submit">Send demo request</button>
               <div class="form-status" id="form-status" aria-live="polite"></div>
             </form>
           </div>
@@ -177,34 +307,41 @@ const year = new Date().getFullYear();
         </div>
         <div>
           <strong>Explore</strong>
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
+          <a href="#specialities">Specialities</a>
+          <a href="#doctors">Doctors</a>
+          <a href="#services">Treatments</a>
           <a href="#faq">FAQs</a>
         </div>
         <div>
           <strong>Contact</strong>
           <a href={`tel:${business.phoneLink}`}>{business.phoneDisplay}</a>
           <a href={business.whatsappLink}>WhatsApp</a>
+          <a href={business.mapLink}>Map</a>
         </div>
       </div>
-      <div class="container"><small>© {year} Fictional concept demo. No medical advice or services are provided.</small></div>
+      <div class="container"><small>&copy; {year} Fictional concept demo. No medical advice or services are provided.</small></div>
     </footer>
 
     <div class="mobile-actions" aria-label="Quick contact actions">
       <a class="button secondary" href={`tel:${business.phoneLink}`}>Call clinic</a>
-      <a class="button" href={business.whatsappLink}>WhatsApp</a>
+      <a class="button accent" href="#appointment">Book visit</a>
     </div>
 
     <script>
       const form = document.querySelector<HTMLFormElement>("#demo-form");
       const status = document.querySelector<HTMLElement>("#form-status");
+      const date = document.querySelector<HTMLInputElement>("#date");
+      if (date) date.min = new Date().toISOString().slice(0, 10);
       form?.addEventListener("submit", (event) => {
         event.preventDefault();
         if (!form.checkValidity()) {
           form.reportValidity();
           return;
         }
-        if (status) status.textContent = "Demo confirmed. No information was sent or stored.";
+        const formData = new FormData(form);
+        const chosenDate = formData.get("date");
+        const chosenTime = formData.get("time");
+        if (status) status.textContent = `Demo confirmed for ${chosenDate} at ${chosenTime}. No information was sent or stored.`;
         form.reset();
       });
     </script>

@@ -1,29 +1,94 @@
 {
-  "trustPoints": ["Clear treatment explanations", "Comfort-first appointments", "Simple booking by call or WhatsApp"],
-  "doctor": {
-    "name": "Dr. Aanya Mehta",
-    "title": "Lead Dentist",
-    "credentialNote": "Fictional professional profile for this concept demo.",
-    "bio": "BrightSmile is designed around one simple idea: patients should understand their options and feel comfortable asking questions before making a decision."
+  "trustPoints": ["40+ years of concept trust", "220+ clinic-network style", "1400+ expert-care positioning", "State-of-the-art treatment story"],
+  "quickActions": [
+    { "title": "Locate Clinic", "text": "Find the closest concept branch", "cta": "Visit now", "href": "#contact" },
+    { "title": "Find a Dentist", "text": "View fictional doctor profiles", "cta": "Dental experts", "href": "#doctors" },
+    { "title": "Plan a Visit", "text": "Choose date and time", "cta": "Book now", "href": "#appointment" }
+  ],
+  "specialities": [
+    { "name": "Implantology", "description": "Replacement options explained after assessment." },
+    { "name": "Oral Surgery", "description": "Calm, planned care for complex concerns." },
+    { "name": "Orthodontics", "description": "Smile alignment guidance for adults and teens." },
+    { "name": "Pedodontics", "description": "Child-friendly visits and prevention." }
+  ],
+  "doctors": [
+    {
+      "name": "Dr. Aanya Mehta",
+      "role": "Lead Dentist",
+      "speciality": "Family Dentistry",
+      "experience": "12 years concept experience",
+      "location": "Baner, Pune",
+      "note": "Fictional profile"
+    },
+    {
+      "name": "Dr. Rohan Iyer",
+      "role": "Consultant Dentist",
+      "speciality": "Root Canal Care",
+      "experience": "10 years concept experience",
+      "location": "Aundh, Pune",
+      "note": "Fictional profile"
+    },
+    {
+      "name": "Dr. Sana Khan",
+      "role": "Orthodontic Consultant",
+      "speciality": "Aligners and Braces",
+      "experience": "9 years concept experience",
+      "location": "Kothrud, Pune",
+      "note": "Fictional profile"
+    },
+    {
+      "name": "Dr. Neel Shah",
+      "role": "Pediatric Dentist",
+      "speciality": "Children's Dentistry",
+      "experience": "8 years concept experience",
+      "location": "Viman Nagar, Pune",
+      "note": "Fictional profile"
+    }
+  ],
+  "about": {
+    "heading": "Dental care that feels easy to understand",
+    "body": "BrightSmile is a fictional demo for a modern Indian dental clinic. It shows how a strong local website can combine clear text, real-looking images, services, doctors, appointment flow, testimonials and location details without overwhelming the visitor.",
+    "bodyTwo": "For a real clinic, this section should use verified history, actual dentist credentials, real photos, approved reviews and confirmed payment details."
+  },
+  "stats": [
+    { "value": "30,000+", "label": "Happy patients style" },
+    { "value": "24", "label": "Concept specialists" },
+    { "value": "8", "label": "Demo locations" },
+    { "value": "4.8/5", "label": "Review positioning" }
+  ],
+  "screening": {
+    "heading": "Know your oral health before the clinic visit",
+    "text": "Use the appointment form to choose a treatment concern, preferred date and preferred time. This demo does not send or store your data.",
+    "cta": "Choose date and time"
   },
   "reviews": [
     {
-      "quote": "The appointment process felt simple, and every step was explained clearly.",
-      "author": "Demo patient review"
+      "quote": "The appointment process felt simple, and every step was explained clearly. The website made it easy to understand services before calling.",
+      "author": "Demo patient",
+      "source": "Illustrative Google-style review"
     },
     {
-      "quote": "A calm, welcoming clinic experience for our entire family.",
-      "author": "Demo patient review"
+      "quote": "A calm, welcoming clinic experience for our entire family. The WhatsApp option helped us ask quick questions before visiting.",
+      "author": "Demo family patient",
+      "source": "Illustrative Google-style review"
     },
     {
-      "quote": "Easy to contact on WhatsApp and helpful with follow-up questions.",
-      "author": "Demo patient review"
+      "quote": "The dentist profile and FAQ made the clinic feel more trustworthy. Booking a preferred time was straightforward.",
+      "author": "Demo working professional",
+      "source": "Illustrative Google-style review"
     }
   ],
+  "resources": [
+    { "title": "Clear aligners: what to ask first", "text": "A simple checklist before choosing aligner treatment." },
+    { "title": "Root canal recovery basics", "text": "What patients can expect after a root canal visit." },
+    { "title": "Healthy tongue and gums", "text": "Small oral-health signs worth discussing with a dentist." },
+    { "title": "Children's dental care tips", "text": "How to keep regular visits calm and predictable." }
+  ],
+  "presence": ["Baner", "Aundh", "Kothrud", "Viman Nagar", "Pimpri"],
   "faqs": [
     {
       "question": "How do I request an appointment?",
-      "answer": "Use the form below, call the clinic, or send a WhatsApp message. This concept demo does not transmit or store form data."
+      "answer": "Use the form below, choose a date and time, call the clinic, or send a WhatsApp message. This concept demo does not transmit or store form data."
     },
     {
       "question": "Do you accept walk-ins?",
