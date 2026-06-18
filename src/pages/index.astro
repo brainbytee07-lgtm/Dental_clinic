@@ -120,12 +120,13 @@ const year = new Date().getFullYear();
         <div class="container">
           <div class="section-title">
             <div class="eyebrow">Treatments</div>
-            <h2>Care built around clear choices</h2>
+            <h2><span class="heading-icon tooth-icon" aria-hidden="true"></span>Care built around clear choices</h2>
             <p class="muted">Every treatment starts with a conversation, an assessment and a clear explanation of suitable options.</p>
           </div>
           <div class="services-grid">
-            {services.map((service) => (
+            {services.map((service, index) => (
               <article class="service">
+                <span class={`service-icon service-icon-${(index % 6) + 1}`} aria-hidden="true"></span>
                 <div class="service-number">{service.number}</div>
                 <h3>{service.name}</h3>
                 <p class="muted">{service.description}</p>

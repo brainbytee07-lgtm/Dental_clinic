@@ -2,7 +2,7 @@
   --ink: #123047;
   --muted: #5b7182;
   --paper: #ffffff;
-  --surface: #c2c2c2;
+  --surface: #fff6e8;
   --line: #d9e6ef;
   --brand: #1769aa;
   --brand-dark: #0f4f82;
@@ -28,6 +28,7 @@ img { max-width: 100%; display: block; }
 .section { padding: 78px 0; }
 .section.compact { padding-top: 48px; }
 .section-title { max-width: 720px; margin-bottom: 34px; }
+.section-title h2 { display: flex; align-items: center; gap: 12px; }
 .center-title { max-width: 760px; margin: 0 auto 34px; text-align: center; }
 .center-title.light { color: var(--white); }
 .eyebrow { color: var(--brand); font-size: .78rem; font-weight: 900; text-transform: uppercase; letter-spacing: .12em; }
@@ -50,9 +51,9 @@ nav { min-height: 68px; display: flex; align-items: center; gap: 24px; }
 .navlinks { display: flex; align-items: center; gap: 22px; }
 .navlinks a { text-decoration: none; font-weight: 600; font-size: .88rem; color: #274357; }
 
-.hero { min-height: 430px; background: #c2c2c2 url("/images/dentist-hero.png") right center / auto 100% no-repeat; color: var(--white); overflow: hidden; }
+.hero { min-height: 430px; background: url("/images/dentist-hero.png") right center / auto 100% no-repeat, linear-gradient(90deg, #1769aa 0 62%, #fff6e8 62% 100%); color: var(--white); overflow: hidden; }
 .hero-inner { min-height: 430px; display: grid; align-items: center; }
-.hero-copy { padding: 28px 36px; max-width: 660px; background: rgba(23, 105, 170, .94); }
+.hero-copy { padding: 28px 36px; max-width: 660px; background: transparent; }
 .hero-copy .eyebrow { color: #d8edff; }
 .hero-copy p { color: #eef7ff; font-size: 1.05rem; max-width: 560px; margin-bottom: 14px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 0; }
@@ -97,8 +98,26 @@ nav { min-height: 68px; display: flex; align-items: center; gap: 24px; }
 .mini-button { min-height: 34px; padding: 0 12px; font-size: .78rem; background: var(--white); color: var(--brand); border-color: #9ed4d5; }
 
 .services-grid, .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.service { border: 1px solid var(--line); background: var(--white); padding: 26px; border-radius: var(--radius); min-height: 210px; }
+.service { border: 1px solid var(--line); background: var(--white); padding: 26px; border-radius: var(--radius); min-height: 230px; position: relative; }
 .service-number { color: var(--accent); font-weight: 900; font-size: .8rem; }
+.heading-icon { flex: 0 0 auto; }
+.tooth-icon { width: 42px; height: 42px; border: 3px solid var(--brand); border-radius: 54% 54% 44% 44%; position: relative; background: #eef7ff; }
+.tooth-icon::before { content: ""; position: absolute; left: 8px; right: 8px; top: -6px; height: 12px; background: #eef7ff; border-radius: 0 0 12px 12px; }
+.tooth-icon::after { content: ""; position: absolute; left: 14px; bottom: -7px; width: 8px; height: 18px; border-radius: 0 0 8px 8px; background: #eef7ff; box-shadow: 10px 0 0 #eef7ff; }
+.service-icon { display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 16px; border-radius: 12px; background: #eef7ff; border: 1px solid #cce0f0; position: relative; }
+.service-icon::before, .service-icon::after { content: ""; position: absolute; }
+.service-icon-1::before { width: 16px; height: 22px; border: 3px solid var(--brand); border-radius: 50% 50% 45% 45%; top: 10px; left: 14px; }
+.service-icon-1::after { width: 6px; height: 14px; border-radius: 0 0 8px 8px; background: #eef7ff; left: 20px; bottom: 8px; box-shadow: 7px 0 0 #eef7ff; }
+.service-icon-2::before { width: 22px; height: 22px; border: 3px solid var(--brand); border-radius: 50%; top: 9px; left: 9px; }
+.service-icon-2::after { width: 13px; height: 3px; background: var(--brand); transform: rotate(45deg); right: 8px; bottom: 12px; border-radius: 3px; }
+.service-icon-3::before { width: 22px; height: 14px; border: 3px solid var(--brand); border-radius: 4px; top: 17px; left: 11px; }
+.service-icon-3::after { width: 3px; height: 30px; background: var(--brand); top: 8px; left: 22px; border-radius: 3px; }
+.service-icon-4::before { width: 24px; height: 24px; border: 3px solid var(--brand); border-radius: 50%; top: 9px; left: 9px; }
+.service-icon-4::after { width: 20px; height: 3px; background: var(--accent); top: 21px; left: 13px; border-radius: 3px; box-shadow: 0 -7px 0 var(--accent), 0 7px 0 var(--accent); }
+.service-icon-5::before { width: 21px; height: 26px; border: 3px solid var(--brand); border-radius: 5px; top: 8px; left: 12px; }
+.service-icon-5::after { width: 12px; height: 3px; background: var(--accent); left: 17px; top: 17px; box-shadow: 0 7px 0 var(--accent); border-radius: 2px; }
+.service-icon-6::before { width: 22px; height: 22px; border: 3px solid var(--brand); border-radius: 50% 50% 8px 50%; transform: rotate(-45deg); top: 10px; left: 11px; }
+.service-icon-6::after { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); right: 9px; top: 9px; }
 
 .banner-section { padding-top: 32px; }
 .screening-banner { min-height: 260px; display: flex; align-items: center; background: var(--surface) url("/images/oral-screening.png") right center / auto 100% no-repeat; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
@@ -166,7 +185,7 @@ footer { background: #0f5f95; color: var(--white); padding: 52px 0 92px; }
   nav { min-height: 58px; gap: 12px; }
   nav .button { min-height: 40px; padding-inline: 12px; font-size: .82rem; }
   .logo { font-size: 1.35rem; }
-  .hero { min-height: auto; background: #c2c2c2 url("/images/dentist-hero.png") 66% top / auto 200px no-repeat; }
+  .hero { min-height: auto; background: url("/images/dentist-hero.png") 66% top / auto 200px no-repeat, linear-gradient(180deg, #fff6e8 0 188px, #1769aa 188px 100%); }
   .hero-inner { min-height: auto; padding-top: 188px; }
   .hero-copy { padding: 22px 18px 30px; box-shadow: none; }
   .hero-copy p { font-size: 1rem; }
