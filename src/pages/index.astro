@@ -57,6 +57,34 @@ const year = new Date().getFullYear();
         </div>
       </section>
 
+      <section class="section doctors-section" id="doctors">
+        <div class="container">
+          <div class="center-title">
+            <div class="eyebrow">Our doctors</div>
+            <h2>Orthodontic doctor profile</h2>
+            <p class="muted">For now, this demo shows one fictional orthodontic doctor profile with clear appointment action.</p>
+          </div>
+          <div class="doctor-grid">
+            {content.doctors.map((doctor, index) => (
+              <article class="doctor-card">
+                <div class={`doctor-photo doctor-photo-${index + 1}`}></div>
+                <div class="doctor-body">
+                  <h3>{doctor.name}</h3>
+                  <p class="doctor-role">{doctor.role}</p>
+                  <ul>
+                    <li>{doctor.speciality}</li>
+                    <li>{doctor.experience}</li>
+                    <li>{doctor.location}</li>
+                  </ul>
+                  <small>{doctor.note}</small>
+                  <a class="mini-button" href="#appointment">Book appointment</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section class="quick-actions" aria-label="Quick actions">
         <div class="container quick-grid">
           {content.quickActions.map((action) => (
@@ -82,34 +110,6 @@ const year = new Date().getFullYear();
                 <span>{item.name.slice(0, 2).toUpperCase()}</span>
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section class="section doctors-section" id="doctors">
-        <div class="container">
-          <div class="center-title">
-            <div class="eyebrow">Our doctors</div>
-            <h2>Orthodontic doctor profile</h2>
-            <p class="muted">For now, this demo shows one fictional orthodontic doctor profile with clear appointment action.</p>
-          </div>
-          <div class="doctor-grid">
-            {content.doctors.map((doctor, index) => (
-              <article class="doctor-card">
-                <div class={`doctor-photo doctor-photo-${index + 1}`}></div>
-                <div class="doctor-body">
-                  <h3>{doctor.name}</h3>
-                  <p class="doctor-role">{doctor.role}</p>
-                  <ul>
-                    <li>{doctor.speciality}</li>
-                    <li>{doctor.experience}</li>
-                    <li>{doctor.location}</li>
-                  </ul>
-                  <small>{doctor.note}</small>
-                  <a class="mini-button" href="#appointment">Book appointment</a>
-                </div>
               </article>
             ))}
           </div>
@@ -253,7 +253,21 @@ const year = new Date().getFullYear();
                 </div>
                 <div class="field">
                   <label for="time">Preferred time</label>
-                  <input id="time" name="time" type="time" min="09:00" max="20:00" required />
+                  <select id="time" name="time" required>
+                    <option value="">Choose time</option>
+                    <option value="09:00 AM">09:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="01:00 PM">01:00 PM</option>
+                    <option value="02:00 PM">02:00 PM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                    <option value="04:00 PM">04:00 PM</option>
+                    <option value="05:00 PM">05:00 PM</option>
+                    <option value="06:00 PM">06:00 PM</option>
+                    <option value="07:00 PM">07:00 PM</option>
+                    <option value="08:00 PM">08:00 PM</option>
+                  </select>
                 </div>
               </div>
               <div class="field">
