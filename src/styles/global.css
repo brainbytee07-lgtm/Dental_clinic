@@ -51,7 +51,7 @@ nav { min-height: 68px; display: flex; align-items: center; gap: 24px; }
 .navlinks { display: flex; align-items: center; gap: 22px; }
 .navlinks a { text-decoration: none; font-weight: 600; font-size: .88rem; color: #274357; }
 
-.hero { min-height: 430px; background: url("/images/dentist-hero.png") right center / auto 100% no-repeat, linear-gradient(90deg, #1769aa 0 70%, #fff6e8 70% 100%); color: var(--white); overflow: hidden; }
+.hero { min-height: 430px; background: url("/images/dentist-hero.png") right center / auto 60% no-repeat, linear-gradient(90deg, #1769aa 0 70%, #fff6e8 70% 100%); color: var(--white); overflow: hidden; }
 .hero-inner { min-height: 430px; display: grid; align-items: center; }
 .hero-copy { padding: 28px 36px; max-width: 660px; background: transparent; }
 .hero-copy .eyebrow { color: #d8edff; }
@@ -80,8 +80,8 @@ nav { min-height: 68px; display: flex; align-items: center; gap: 24px; }
 .speciality-card span { display: inline-grid; place-items: center; width: 44px; height: 44px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; font-weight: 900; }
 .speciality-card p { color: #d9fbff; margin-bottom: 0; font-size: .9rem; }
 
-.doctors-section { background: var(--surface); padding-top: 52px; padding-bottom: 44px; }
-.resources-section { background: var(--surface); }
+.doctors-section { background: var(--paper); padding-top: 52px; padding-bottom: 44px; }
+.resources-section { background: var(--paper); }
 .doctor-grid { display: grid; grid-template-columns: minmax(280px, 920px); justify-content: center; gap: 16px; }
 .doctor-card, .service, details, .contact-card { box-shadow: var(--shadow); }
 .doctor-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: grid; grid-template-columns: minmax(260px, 390px) 1fr; align-items: stretch; }
@@ -98,6 +98,7 @@ nav { min-height: 68px; display: flex; align-items: center; gap: 24px; }
 .mini-button { min-height: 34px; padding: 0 12px; font-size: .78rem; background: var(--white); color: var(--brand); border-color: #9ed4d5; }
 
 .services-grid, .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+#services, #about, #appointment { background: var(--paper); }
 .service { border: 1px solid var(--line); background: var(--white); padding: 26px; border-radius: var(--radius); min-height: 230px; position: relative; }
 .service-number { color: var(--accent); font-weight: 900; font-size: .8rem; }
 .heading-icon { flex: 0 0 auto; }
@@ -133,7 +134,7 @@ nav { min-height: 68px; display: flex; align-items: center; gap: 24px; }
 .payment-list { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
 .payment-list li { padding: 9px 12px; background: var(--surface); border-radius: 4px; font-weight: 800; font-size: .85rem; }
 
-.reviews { background: #f7f7f7; color: var(--ink); }
+.reviews { background: var(--surface); color: var(--ink); }
 .reviews .center-title.light { color: var(--ink); }
 .reviews .eyebrow { color: var(--accent-dark); }
 .review { color: var(--ink); background: var(--white); border: 1px solid #f3d3b7; padding: 24px; border-radius: 5px; min-height: 210px; box-shadow: none; position: relative; }
