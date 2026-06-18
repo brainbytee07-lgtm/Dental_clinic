@@ -206,23 +206,6 @@ const year = new Date().getFullYear();
         </div>
       </section>
 
-      <section class="section" id="faq">
-        <div class="container">
-          <div class="section-title">
-            <div class="eyebrow">Frequently asked questions</div>
-            <h2>Useful answers before you visit</h2>
-          </div>
-          <div class="faq-list">
-            {content.faqs.map((faq) => (
-              <details>
-                <summary>{faq.question}</summary>
-                <p>{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section class="section" id="appointment">
         <div class="container contact-grid">
           <div>
@@ -291,6 +274,26 @@ const year = new Date().getFullYear();
             <p><a href={business.whatsappLink}>Message on WhatsApp</a></p>
             <p><a href={business.mapLink}>Open map</a></p>
           </aside>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="faq-layout">
+            <div class="faq-intro">
+              <div class="eyebrow">Frequently asked questions</div>
+              <h2>Useful answers before you visit</h2>
+              <p class="muted">A quick set of common questions on the left, with the full answers stacked on the right.</p>
+            </div>
+            <div class="faq-list">
+              {content.faqs.map((faq) => (
+                <details>
+                  <summary>{faq.question}</summary>
+                  <p>{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </main>
