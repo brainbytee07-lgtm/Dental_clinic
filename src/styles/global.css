@@ -1,6 +1,6 @@
 :root {
   --ink: #123047;
-  --muted: #5b7182;
+  --muted: #d4d4d4;
   --paper: #ffffff;
   --surface: #fff6e8;
   --line: #d9e6ef;
@@ -38,7 +38,9 @@ h1 { font-size: clamp(2.15rem, 4vw, 3.85rem); line-height: 1.04; letter-spacing:
 h2 { font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.1; letter-spacing: 0; }
 h3 { font-size: 1.08rem; }
 .muted { color: var(--muted); }
-.button, .mini-button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 18px; border: 1px solid transparent; border-radius: 5px; background: var(--brand); color: var(--white); font-weight: 800; text-decoration: none; cursor: pointer; }
+.contact-grid h2 { font-size: clamp(1.45rem, 2.4vw, 2.2rem); }
+.faq-intro h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); }
+.button, .mini-button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 18px; border: 1px solid transparent; border-radius: 5px; background: var(--brand); color: var(--white); font-weight: 700; text-decoration: none; cursor: pointer; }
 .button:hover, .mini-button:hover { filter: brightness(.94); }
 .button.accent { background: var(--accent); }
 .button.secondary { background: var(--white); color: var(--brand-dark); border-color: var(--line); }
@@ -159,7 +161,7 @@ nav { min-height: 68px; display: flex; align-items: center; gap: 24px; }
 .faq-layout { display: grid; grid-template-columns: minmax(220px, 280px) minmax(0, 1fr); gap: 20px; align-items: start; }
 .faq-intro { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; position: sticky; top: 92px; }
 details { border: 1px solid var(--line); background: var(--white); border-radius: var(--radius); padding: 18px 20px; }
-summary { cursor: pointer; font-weight: 900; }
+summary { cursor: pointer; font-weight: 700; }
 details p { margin: 14px 0 0; color: var(--muted); }
 .contact-card { background: #eef3f7; padding: 32px; border-radius: var(--radius); }
 .contact-card a { color: var(--brand-dark); font-weight: 900; }
