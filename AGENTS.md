@@ -8,3 +8,4 @@
 - Avoid adding dependencies unless they solve a clear production need.
 - Test the production build and responsive layout after material changes.
 - Do not contact prospects or publish a personalised concept without user approval.
+- For any website, landing page, or marketing-site work, always apply the installed `design-taste-frontend` skill and the project-level Impeccable workflow before shipping.

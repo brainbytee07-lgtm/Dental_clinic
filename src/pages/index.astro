@@ -5,6 +5,7 @@ import content from "../config/content.json";
 import "../styles/global.css";
 
 const year = new Date().getFullYear();
+const area = business.area ?? "your area";
 ---
 
 <!doctype html>
@@ -18,10 +19,9 @@ const year = new Date().getFullYear();
     <title>{business.seoTitle}</title>
   </head>
   <body style={`--brand:${business.primaryColor};--accent:${business.accentColor};`}>
-    <div class="notice">{business.conceptNotice}</div>
     <div class="topbar">
       <div class="container">
-        <span>{business.hours[0]}</span>
+        <span>{business.hoursDisplay ?? business.hours.join(" | ")}</span>
         <span>{business.phoneDisplay}</span>
       </div>
     </div>
@@ -29,46 +29,75 @@ const year = new Date().getFullYear();
       <nav class="container" aria-label="Main navigation">
         <a class="logo" href="#top">{business.shortName}</a>
         <div class="navlinks">
-          <a href="#specialities">Specialities</a>
-          <a href="#doctors">Doctors</a>
-          <a href="#services">Treatments</a>
-          <a href="#reviews">Testimonials</a>
-          <a href="#contact">Contact</a>
+          <a href="#services">Services</a>
+          <a href="#doctor">Doctor</a>
+          <a href="#gallery">Clinic photos</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#location">Location</a>
         </div>
         <a class="button accent" href="#appointment">Get appointment</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero">
-        <div class="container hero-inner">
+      <section class="hero hero-remap">
+        <div class="container hero-grid">
           <div class="hero-copy">
-            <div class="eyebrow">Family dental care in Baner, Pune</div>
-            <h1>{business.tagline}</h1>
-            <p>{business.description}</p>
-            <ul class="trust-list hero-trust">
-              {content.trustPoints.map((point) => <li>{point}</li>)}
-            </ul>
+            <div class="eyebrow">Book your dental appointment in {area}</div>
+            <h1>Book Your Dental Appointment in {area}</h1>
+            <p>
+              Get quick help for tooth pain, braces, implants, cleaning, whitening and regular dental visits. Call,
+              WhatsApp or choose a preferred appointment time.
+            </p>
+            <div class="hero-signal">Call, WhatsApp or request a visit in under a minute.</div>
             <div class="hero-actions">
-              <a class="button accent" href="#appointment">Book an appointment</a>
-              <a class="button secondary" href={business.whatsappLink}>Chat on WhatsApp</a>
+              <a class="button accent" href="#appointment">Book appointment</a>
+              <a class="button secondary" href={business.whatsappLink}>WhatsApp clinic</a>
+              <a class="button emergency" href={`tel:${business.phoneLink}`}>Emergency call</a>
+            </div>
+            <div class="hero-chips">
+              {content.heroHighlights.map((point) => <span>{point}</span>)}
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-photo" role="img" aria-label="Friendly dental consultation inside a modern clinic"></div>
+            <div class="hero-card">
+              <strong>Fast actions</strong>
+              <span>Call, WhatsApp or request a visit in under a minute.</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section doctors-section" id="doctors">
+      <section class="section enquiry-strip" aria-label="Contact shortcuts">
+        <div class="container enquiry-grid">
+          {content.quickActions.map((action) => (
+            <a class="enquiry-card" href={action.href}>
+              <span class="enquiry-icon" aria-hidden="true"></span>
+              <strong>{action.title}</strong>
+              <small>{action.text}</small>
+              <em>{action.cta}</em>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="section alt-section" id="doctor">
         <div class="container">
-          <div class="center-title">
-            <div class="eyebrow">Our doctors</div>
-            <h2>Orthodontic doctor profile</h2>
-            <p class="muted">For now, this demo shows one fictional orthodontic doctor profile with clear appointment action.</p>
+          <div class="section-title split-title">
+            <div>
+              <div class="eyebrow">Doctor profile</div>
+              <h2>Meet Dr. Anupam Singh</h2>
+            </div>
+            <p class="muted doctor-intro">People want to know who they are visiting before they call. This section puts the doctor and the credentials right up front.</p>
           </div>
-          <div class="doctor-grid">
-            {content.doctors.map((doctor, index) => (
-              <article class="doctor-card">
-                <div class={`doctor-photo doctor-photo-${index + 1}`}></div>
+          <div class="doctor-card doctor-card-wide">
+            {content.doctors.slice(0, 1).map((doctor) => (
+              <>
+                <div class="doctor-photo doctor-photo-main" aria-hidden="true"></div>
                 <div class="doctor-body">
+                  <div class="eyebrow">Clinic dentist</div>
                   <h3>{doctor.name}</h3>
                   <p class="doctor-role">{doctor.role}</p>
                   <ul>
@@ -76,41 +105,13 @@ const year = new Date().getFullYear();
                     <li>{doctor.experience}</li>
                     <li>{doctor.location}</li>
                   </ul>
-                  <small>{doctor.note}</small>
-                  <a class="mini-button" href="#appointment">Book appointment</a>
+                  <p class="doctor-note">{doctor.note}</p>
+                  <div class="doctor-actions">
+                    <a class="button accent" href="#appointment">Book with this doctor</a>
+                    <a class="button secondary" href={business.whatsappLink}>Ask on WhatsApp</a>
+                  </div>
                 </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section class="quick-actions" aria-label="Quick actions">
-        <div class="container quick-grid">
-          {content.quickActions.map((action) => (
-            <a class="quick-card" href={action.href}>
-              <span class="quick-dot"></span>
-              <strong>{action.title}</strong>
-              <small>{action.text}</small>
-              <em>{action.cta} -></em>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <section class="section compact" id="specialities">
-        <div class="container">
-          <div class="center-title">
-            <div class="eyebrow">Our specialities</div>
-            <h2>Easy-to-scan treatment categories</h2>
-          </div>
-          <div class="speciality-grid">
-            {content.specialities.map((item) => (
-              <article class="speciality-card">
-                <span>{item.name.slice(0, 2).toUpperCase()}</span>
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-              </article>
+              </>
             ))}
           </div>
         </div>
@@ -119,11 +120,11 @@ const year = new Date().getFullYear();
       <section class="section" id="services">
         <div class="container">
           <div class="section-title">
-            <div class="eyebrow">Treatments</div>
-            <h2><span class="heading-icon tooth-icon" aria-hidden="true"></span>Care built around clear choices</h2>
-            <p class="muted">Every treatment starts with a conversation, an assessment and a clear explanation of suitable options.</p>
+            <div class="eyebrow">Services</div>
+            <h2>{content.servicesHeadline}</h2>
+            <p class="muted">Keep the list short, obvious and enquiry-friendly. These are the services local patients search for first.</p>
           </div>
-          <div class="services-grid">
+          <div class="services-grid enquiry-services">
             {services.map((service, index) => (
               <article class="service">
                 <span class={`service-icon service-icon-${(index % 6) + 1}`} aria-hidden="true"></span>
@@ -136,50 +137,37 @@ const year = new Date().getFullYear();
         </div>
       </section>
 
-      <section class="section banner-section">
+      <section class="section alt-section" id="gallery">
         <div class="container">
-          <div class="screening-banner">
-            <div>
-              <div class="eyebrow">Oral health screening</div>
-              <h2>{content.screening.heading}</h2>
-              <p>{content.screening.text}</p>
-              <a class="button accent" href="#appointment">{content.screening.cta}</a>
-            </div>
+          <div class="section-title">
+            <div class="eyebrow">Clinic photos</div>
+            <h2>Photos that make the clinic feel real</h2>
+            <p class="muted">A small gallery is enough. The goal is trust, not a stock-photo parade.</p>
+          </div>
+          <div class="gallery-grid">
+            {content.clinicPhotos.map((photo, index) => (
+              <article class="gallery-card">
+                <div class={`gallery-image gallery-image-${index + 1}`} aria-hidden="true"></div>
+                <h3>{photo.title}</h3>
+                <p class="muted">{photo.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section class="section" id="about">
-        <div class="container about-grid">
-          <div class="about-visual" role="img" aria-label="A welcoming dental clinic reception and consultation area"></div>
-          <div>
-            <div class="eyebrow">About {business.shortName}</div>
-            <h2>{content.about.heading}</h2>
-            <p>{content.about.body}</p>
-            <p>{content.about.bodyTwo}</p>
-            <div class="stats-grid">
-              {content.stats.map((stat) => (
-                <div class="stat-card">
-                  <strong>{stat.value}</strong>
-                  <span>{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section reviews" id="reviews">
+      <section class="section reviews alt-section" id="reviews">
         <div class="container">
-          <div class="center-title light">
-            <div class="eyebrow">Illustrative testimonials</div>
-            <h2>Our patients speak</h2>
+          <div class="section-title">
+            <div class="eyebrow">Reviews and testimonials</div>
+            <h2>Ratings that help patients trust the clinic faster</h2>
+            <p class="muted">Strong rating proof, clear contact options and simple booking can help more visitors become enquiries.</p>
           </div>
           <div class="reviews-grid">
             {content.reviews.map((review, index) => (
               <article class="review">
                 <span class={`review-avatar review-avatar-${index + 1}`} aria-hidden="true"></span>
-                <p>"{review.quote}"</p>
+                <p>{review.quote}</p>
                 <strong>{review.author}</strong>
                 <span>{review.source}</span>
               </article>
@@ -188,38 +176,45 @@ const year = new Date().getFullYear();
         </div>
       </section>
 
-      <section class="section resources-section">
-        <div class="container">
-          <div class="center-title">
-            <div class="eyebrow">Oral health resources</div>
-            <h2>Useful reading before booking</h2>
+      <section class="section" id="location">
+        <div class="container location-grid">
+          <div>
+            <div class="eyebrow">Google Maps location</div>
+            <h2>{content.location.title}</h2>
+            <p class="muted">{content.location.text}</p>
+            <div class="location-points">
+              <div><strong>Address</strong><span>{business.address}</span></div>
+              <div><strong>Phone</strong><span>{business.phoneDisplay}</span></div>
+              <div><strong>WhatsApp</strong><span>Fast message option for quick enquiries</span></div>
+            </div>
+            <div class="hero-actions location-actions">
+              <a class="button accent" href={business.mapLink}>Open Google Maps</a>
+              <a class="button secondary" href={`tel:${business.phoneLink}`}>Call clinic</a>
+            </div>
           </div>
-          <div class="resource-grid">
-            {content.resources.map((resource) => (
-              <article class="resource-card">
-                <div class="resource-image"></div>
-                <h3>{resource.title}</h3>
-                <p>{resource.text}</p>
-              </article>
-            ))}
+          <div class="map-card">
+            <div class="map-pin"></div>
+            <strong>{business.name}</strong>
+            <span>{business.area}</span>
+            <small>Map preview card for mobile-first enquiries</small>
           </div>
         </div>
       </section>
 
-      <section class="section" id="appointment">
+      <section class="section alt-section" id="appointment">
         <div class="container contact-grid">
           <div>
-            <div class="eyebrow">Request an appointment</div>
-            <h2>Choose your preferred date and time</h2>
-            <p class="muted">This safe demo form validates your entry locally, displays a confirmation and does not transmit or store personal data.</p>
-            <form id="demo-form">
+            <div class="eyebrow">Appointment form</div>
+            <h2 class="appointment-heading">Choose your preferred date and time</h2>
+            <p class="muted">Share your concern and preferred visit time. The clinic can confirm availability by call or WhatsApp.</p>
+            <form id="appointment-form">
               <div class="field">
                 <label for="name">Name</label>
                 <input id="name" name="name" autocomplete="name" required />
               </div>
               <div class="field">
                 <label for="phone">Mobile number</label>
-                <input id="phone" name="phone" type="tel" inputmode="tel" pattern="[0-9+\s-]{10,16}" required />
+                <input id="phone" name="phone" type="tel" inputmode="tel" pattern={"[0-9+\\s-]{10,16}"} required />
               </div>
               <div class="field">
                 <label for="concern">What would you like help with?</label>
@@ -231,7 +226,7 @@ const year = new Date().getFullYear();
               </div>
               <div class="field other-concern-field" id="other-concern-field" hidden>
                 <label for="other-concern">Tell us your concern</label>
-                <input id="other-concern" name="otherConcern" placeholder="Example: Jaw pain, braces query, second opinion" />
+                <input id="other-concern" name="otherConcern" placeholder="Example: jaw pain, braces query, second opinion" />
               </div>
               <div class="form-row">
                 <div class="field">
@@ -248,12 +243,14 @@ const year = new Date().getFullYear();
                     <option value="12:00 PM">12:00 PM</option>
                     <option value="01:00 PM">01:00 PM</option>
                     <option value="02:00 PM">02:00 PM</option>
+                    <option value="02:15 PM">02:15 PM</option>
                     <option value="03:00 PM">03:00 PM</option>
                     <option value="04:00 PM">04:00 PM</option>
                     <option value="05:00 PM">05:00 PM</option>
                     <option value="06:00 PM">06:00 PM</option>
                     <option value="07:00 PM">07:00 PM</option>
                     <option value="08:00 PM">08:00 PM</option>
+                    <option value="09:00 PM">09:00 PM</option>
                   </select>
                 </div>
               </div>
@@ -261,13 +258,17 @@ const year = new Date().getFullYear();
                 <label for="message">Optional note</label>
                 <textarea id="message" name="message"></textarea>
               </div>
-              <button class="button accent" type="submit">Send demo request</button>
+              <button class="button accent" type="submit">Send appointment request</button>
               <div class="form-status" id="form-status" aria-live="polite"></div>
             </form>
           </div>
-          <aside class="contact-card" id="contact">
-            <div class="eyebrow">Visit or contact</div>
-            <h2>{business.name}</h2>
+          <aside class="contact-card">
+            <div class="eyebrow">Need urgent help?</div>
+            <h2>{content.emergency.title}</h2>
+            <p>{content.emergency.text}</p>
+            <a class="button emergency" href={`tel:${business.phoneLink}`}>Emergency call button</a>
+            <hr />
+            <p><strong>{business.name}</strong></p>
             <p>{business.address}</p>
             {business.hours.map((line) => <p><strong>{line}</strong></p>)}
             <p><a href={`tel:${business.phoneLink}`}>{business.phoneDisplay}</a></p>
@@ -277,22 +278,20 @@ const year = new Date().getFullYear();
         </div>
       </section>
 
-      <section class="section" id="faq">
-        <div class="container">
-          <div class="faq-layout">
-            <div class="faq-intro">
-              <div class="eyebrow">Frequently asked questions</div>
-              <h2>Useful answers before you visit</h2>
-              <p class="muted">A quick set of common questions on the left, with the full answers stacked on the right.</p>
-            </div>
-            <div class="faq-list">
-              {content.faqs.map((faq) => (
-                <details>
-                  <summary>{faq.question}</summary>
-                  <p>{faq.answer}</p>
-                </details>
-              ))}
-            </div>
+      <section class="section faq-section" id="faq">
+        <div class="container faq-grid">
+          <div class="faq-intro">
+            <div class="eyebrow">Useful answers before you visit</div>
+            <h2>Quick answers for worried patients</h2>
+            <p class="muted">A left-and-right FAQ layout keeps the section compact and easier to scan.</p>
+          </div>
+          <div class="faq-list">
+            {content.faqs.map((faq) => (
+              <details>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -302,13 +301,13 @@ const year = new Date().getFullYear();
       <div class="container footer-grid">
         <div>
           <h3>{business.name}</h3>
-          <p>{business.conceptNotice}</p>
+          <p>{business.address}</p>
         </div>
         <div>
           <strong>Explore</strong>
-          <a href="#specialities">Specialities</a>
-          <a href="#doctors">Doctors</a>
-          <a href="#services">Treatments</a>
+          <a href="#services">Services</a>
+          <a href="#doctor">Doctor</a>
+          <a href="#gallery">Clinic photos</a>
           <a href="#faq">FAQs</a>
         </div>
         <div>
@@ -318,16 +317,17 @@ const year = new Date().getFullYear();
           <a href={business.mapLink}>Map</a>
         </div>
       </div>
-      <div class="container"><small>&copy; {year} Fictional concept demo. No medical advice or services are provided.</small></div>
+      <div class="container"><small>&copy; {year} {business.name}. Details should be verified by the clinic before publishing.</small></div>
     </footer>
 
     <div class="mobile-actions" aria-label="Quick contact actions">
       <a class="button secondary" href={`tel:${business.phoneLink}`}>Call clinic</a>
       <a class="button accent" href="#appointment">Book visit</a>
+      <a class="button emergency" href={`tel:${business.phoneLink}`}>Emergency call</a>
     </div>
 
     <script>
-      const form = document.querySelector<HTMLFormElement>("#demo-form");
+      const form = document.querySelector<HTMLFormElement>("#appointment-form");
       const status = document.querySelector<HTMLElement>("#form-status");
       const date = document.querySelector<HTMLInputElement>("#date");
       const concern = document.querySelector<HTMLSelectElement>("#concern");
@@ -351,8 +351,9 @@ const year = new Date().getFullYear();
         const formData = new FormData(form);
         const chosenDate = formData.get("date");
         const chosenTime = formData.get("time");
-        if (status) status.textContent = `Demo confirmed for ${chosenDate} at ${chosenTime}. No information was sent or stored.`;
+        if (status) status.textContent = `Appointment request noted for ${chosenDate} at ${chosenTime}. The clinic can confirm the final slot by call or WhatsApp.`;
         form.reset();
+        if (otherConcernField) otherConcernField.hidden = true;
       });
     </script>
   </body>

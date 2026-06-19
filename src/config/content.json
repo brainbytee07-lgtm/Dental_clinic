@@ -1,60 +1,84 @@
 {
-  "trustPoints": ["40+ years of concept trust", "220+ clinic-network style", "1400+ expert-care positioning", "State-of-the-art treatment story"],
+  "heroHighlights": [
+    "4.8 star rating",
+    "64 public reviews",
+    "Call and WhatsApp booking",
+    "Open 7 days a week"
+  ],
   "quickActions": [
-    { "title": "Locate Clinic", "text": "Find the closest concept branch", "cta": "Visit now", "href": "#contact" },
-    { "title": "Find a Dentist", "text": "View fictional doctor profiles", "cta": "Dental experts", "href": "#doctors" },
-    { "title": "Plan a Visit", "text": "Choose date and time", "cta": "Book now", "href": "#appointment" },
-    { "title": "Ask a Question", "text": "Use WhatsApp for quick help", "cta": "Message us", "href": "https://wa.me/919876543210?text=Hello%20BrightSmile%2C%20I%20have%20a%20question." }
+    { "title": "Call now", "text": "Speak to the clinic instantly", "cta": "Call", "href": "tel:+919540117711" },
+    { "title": "WhatsApp", "text": "Send a quick question", "cta": "Message", "href": "https://wa.me/919540117711?text=Hello%20Dentezz%20Dental%20Expertz%2C%20I%20have%20a%20question." },
+    { "title": "Book visit", "text": "Pick a date and time", "cta": "Open form", "href": "#appointment" },
+    { "title": "Emergency", "text": "Urgent pain needs a call", "cta": "Call emergency", "href": "tel:+919540117711" }
   ],
-  "specialities": [
-    { "name": "Implantology", "description": "Replacement options explained after assessment." },
-    { "name": "Oral Surgery", "description": "Calm, planned care for complex concerns." },
-    { "name": "Orthodontics", "description": "Smile alignment guidance for adults and teens." },
-    { "name": "Pedodontics", "description": "Child-friendly visits and prevention." }
-  ],
+  "servicesHeadline": "Treatment choices people actually search for",
   "doctors": [
     {
-      "name": "Dr. Sana Khan",
-      "role": "Orthodontic Consultant",
-      "speciality": "Aligners and Braces",
-      "experience": "9 years concept experience",
-      "location": "Kothrud, Pune",
-      "note": "Fictional profile"
+      "name": "Dr. Anupam Singh",
+      "role": "Dentist",
+      "speciality": "General dental consultation and treatment planning",
+      "experience": "13 years of experience",
+      "location": "Siddharth Vihar, Ghaziabad",
+      "note": "Patients can call or WhatsApp the clinic to confirm availability before visiting."
     }
   ],
+  "clinicPhotos": [
+    { "title": "Reception and welcome desk", "text": "A clean first impression matters." },
+    { "title": "Doctor consultation area", "text": "Patients want to see the space before visiting." },
+    { "title": "Treatment room detail", "text": "A modern room helps reduce hesitation." }
+  ],
+  "beforeAfter": {
+    "before": [
+      "No website",
+      "Old website",
+      "No WhatsApp button",
+      "No appointment form"
+    ],
+    "after": [
+      "Modern website",
+      "WhatsApp enquiry button",
+      "Services and doctor profile",
+      "Appointment form that converts"
+    ],
+    "line": "Doctor, this is the kind of upgrade I can create for your clinic in 3 to 5 days."
+  },
   "about": {
-    "heading": "Dental care that feels easy to understand",
-    "body": "BrightSmile is a fictional demo for a modern Indian dental clinic. It shows how a strong local website can combine clear text, real-looking images, services, doctors, appointment flow, testimonials and location details without overwhelming the visitor.",
-    "bodyTwo": "For a real clinic, this section should use verified history, actual dentist credentials, real photos, approved reviews and confirmed payment details."
+    "heading": "Dental care that is easy to book and easy to understand",
+    "body": "Dentezz Dental Expertz serves patients around Siddharth Vihar, Indirapuram and Ghaziabad with clear appointment options, direct calling and WhatsApp enquiry support.",
+    "bodyTwo": "Patients can review services, check the location, choose a preferred visit time and contact the clinic quickly from mobile."
   },
   "stats": [
-    { "value": "Verified", "label": "claims before publishing" },
-    { "value": "Mobile", "label": "first appointment flow" },
-    { "value": "Local", "label": "search-ready sections" },
-    { "value": "Simple", "label": "copy for patient trust" }
+    { "value": "Call", "label": "button above the fold" },
+    { "value": "WhatsApp", "label": "button for quick leads" },
+    { "value": "Book", "label": "date and time form" },
+    { "value": "Trust", "label": "doctor and reviews nearby" }
   ],
   "screening": {
-    "heading": "Know your oral health before the clinic visit",
-    "text": "Use the appointment form to choose a treatment concern, preferred date and preferred time. This demo does not send or store your data.",
+    "heading": "Simple reading before booking",
+    "text": "Use the appointment form to choose a treatment concern, preferred date and preferred time. The clinic can confirm the final appointment over call or WhatsApp.",
     "cta": "Choose date and time"
   },
   "reviews": [
     {
-      "quote": "The appointment process felt simple, and every step was explained clearly. The website made it easy to understand services before calling.",
-      "author": "Demo patient",
-      "source": "Illustrative Google-style review"
+      "quote": "Rated 4.8 out of 5 based on 64 public reviews shared for this clinic profile.",
+      "author": "Dentezz Dental Expertz",
+      "source": "Rating summary"
     },
     {
-      "quote": "A calm, welcoming clinic experience for our entire family. The WhatsApp option helped us ask quick questions before visiting.",
-      "author": "Demo family patient",
-      "source": "Illustrative Google-style review"
+      "quote": "The website keeps the clinic's strongest trust points visible before a patient calls or books.",
+      "author": "Patient trust signal",
+      "source": "Profile improvement"
     },
     {
-      "quote": "The dentist profile and FAQ made the clinic feel more trustworthy. Booking a preferred time was straightforward.",
-      "author": "Demo working professional",
-      "source": "Illustrative Google-style review"
+      "quote": "Call, WhatsApp, location and appointment options are placed clearly for fast mobile enquiries.",
+      "author": "Enquiry flow",
+      "source": "Website feature"
     }
   ],
+  "location": {
+    "title": "Google Maps location",
+    "text": "Help people find the Siddharth Vihar clinic fast on mobile with a tap-friendly map, address and call action."
+  },
   "resources": [
     { "title": "Clear aligners: what to ask first", "text": "A simple checklist before choosing aligner treatment." },
     { "title": "Root canal recovery basics", "text": "What patients can expect after a root canal visit." },
@@ -64,11 +88,11 @@
   "faqs": [
     {
       "question": "How do I request an appointment?",
-      "answer": "Use the form below, choose a date and time, call the clinic, or send a WhatsApp message. This concept demo does not transmit or store form data."
+      "answer": "Use the form below, choose a date and time, call the clinic, or send a WhatsApp message. The clinic can confirm the final slot directly."
     },
     {
       "question": "Do you accept walk-ins?",
-      "answer": "Appointments are recommended so the clinic can reserve enough time for your concern. Urgent cases can call before visiting."
+      "answer": "Appointments are recommended so the clinic can reserve enough time for your concern. Urgent cases should call before visiting."
     },
     {
       "question": "Will treatment start during the first visit?",
@@ -76,8 +100,11 @@
     },
     {
       "question": "What payment methods are available?",
-      "answer": "The concept clinic supports UPI, cards and cash. EMI or insurance support should only be listed after confirming the real clinic's policy."
+      "answer": "Payment details should be confirmed directly with the clinic before treatment."
     }
   ],
-  "payments": ["UPI", "Cards", "Cash", "Treatment estimates before approval"]
+  "emergency": {
+    "title": "Need urgent help?",
+    "text": "A strong emergency call button can turn a worried visitor into a real enquiry before they scroll away."
+  }
 }

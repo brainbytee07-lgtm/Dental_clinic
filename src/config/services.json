@@ -1,32 +1,32 @@
 [
   {
     "number": "01",
-    "name": "Routine Dental Care",
-    "description": "Regular check-ups, professional cleaning and preventive guidance for healthier smiles."
+    "name": "Cleaning",
+    "description": "Professional cleaning, polishing and regular preventive care."
   },
   {
     "number": "02",
-    "name": "Root Canal Treatment",
+    "name": "RCT",
     "description": "Clear explanations and comfort-focused treatment planning for damaged or infected teeth."
   },
   {
     "number": "03",
-    "name": "Smile Improvement",
-    "description": "Personalised options for whitening, alignment and cosmetic improvements after consultation."
+    "name": "Braces",
+    "description": "Simple guidance for metal braces, ceramic braces and clear aligners."
   },
   {
     "number": "04",
-    "name": "Children's Dentistry",
-    "description": "Patient, friendly visits designed to help young patients feel calm and understood."
+    "name": "Whitening",
+    "description": "Smile brightening options explained clearly after checking suitability."
   },
   {
     "number": "05",
-    "name": "Dental Implants",
-    "description": "Consultation-led replacement options for missing teeth, based on individual suitability."
+    "name": "Implants",
+    "description": "Replacement planning for missing teeth, based on oral health and suitability."
   },
   {
     "number": "06",
-    "name": "Urgent Dental Visits",
-    "description": "Prompt assessment for tooth pain, broken teeth and other urgent dental concerns."
+    "name": "Emergency Care",
+    "description": "Urgent calls for pain, broken teeth and sudden dental problems."
   }
 ]
